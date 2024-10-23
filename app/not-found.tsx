@@ -1,33 +1,35 @@
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 
 export default function NotFound() {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 'calc(var(--vh, 1vh) * 100)',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "calc(var(--vh, 1vh) * 100)",
       }}
     >
       <div
         style={{
-          width: '224px',
-          height: '143px',
-          position: 'relative',
+          width: "224px",
+          height: "143px",
+          position: "relative",
         }}
       >
-        <Image src={'/images/error/network-error.png'} alt="" priority fill />
+        <Image src={"/images/error/network-error.png"} alt="" priority fill />
       </div>
       <div>존재하지 않는 경로에요 🤣</div>
       <Link
         href="/"
         style={{
-          marginTop: '16px',
-          color: '#0070f3',
-          textDecoration: 'none',
+          marginTop: "16px",
+          color: "#0070f3",
+          textDecoration: "none",
         }}
       >
         홈으로 가기

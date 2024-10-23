@@ -1,7 +1,9 @@
 "use client";
+
 import { memo, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
@@ -65,10 +67,9 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div>
-        <Header display={"block"} />
-        {children}
-      </div>
+      <Header />
+      {children}
+      <Footer />
       <Toaster
         toastOptions={{
           success: {
