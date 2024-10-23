@@ -1,33 +1,49 @@
 import styled from "@emotion/styled";
+import { Caveat } from "next/font/google";
 
-type HeaderProps = {
-  display?: "none" | "block";
-};
+const caveat = Caveat({ subsets: ["latin"] });
 
-const Header = ({ display = "block" }: HeaderProps) => {
+const Header = () => {
   return (
-    <Container
-      style={{
-        display,
-      }}
-    ></Container>
+    <Container className={caveat.className}>
+      <Logo>JJOMUL</Logo>
+      <Nav>about</Nav>
+    </Container>
   );
 };
 
 export default Header;
 
 const Container = styled.div`
-  width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   overflow: hidden;
-  padding: 20px 16px;
-  height: 57px;
+  height: 80px;
   background-color: white;
   z-index: 100;
+  padding: 0 64px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+`;
+
+const Logo = styled.div`
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  width: fit-content;
+`;
+
+const Nav = styled.div`
+  display: flex;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+  width: fit-content;
 `;
